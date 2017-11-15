@@ -66,3 +66,6 @@ Let's assume that the db query is really slow (database query) and that it has t
 HTTP server needs a function it can call upon incoming requests - if Node.js would start the server and then just pause waiting for another request, it'll be very inefficient. Also note that requests happen once the previous request is completed and answered for.
 
 It's important to note that asynchronous models has its limitations. Node.js is just a single process and can run only one single CPU core. "Personally, I find this model quite approachable, because it allows to write applications that have to deal with concurrency in an efficient and relatively straightforward manner."
+
+
+# how server handles requests

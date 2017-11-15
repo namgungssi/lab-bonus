@@ -3,11 +3,11 @@ node beginner
 
 
 # about
-this document is to get you started with developing applications for Node.js.
+This document is to get you started with developing applications for Node.js.
 
 
 # warning
-can get a little tricky, but don't be discouraged.
+Can get a little tricky, but don't be discouraged.
 
 "I’m really just the guy I talked about in the previous paragraph. I know a thing or two about developing backend web applications, but I’m still new to “real” JavaScript and still new to Node.js. I learned some of the more advanced aspects of JavaScript just recently. I’m not experienced.
 Which is why this is no “from novice to expert” book. It’s more like “from novice to advanced novice”.
@@ -15,7 +15,7 @@ If I don’t fail, then this will be the kind of document I wish I had when star
 
 
 # server-side
-defines what you can do with the language, but it doesn't say much about what the language itself can do. JavaScript is a "complete" language : may use it in many context and achieve about anything you request.
+Defines what you can do with the language, but it doesn't say much about what the language itself can do. JavaScript is a "complete" language : may use it in many context and achieve about anything you request.
 
 
 # starting
@@ -51,7 +51,7 @@ so let's create a main file for HTTP to breathe in. Most case, you will see the 
 
 
 # analyzing
-let's find out exactly what is going on;
+Let's find out exactly what is going on;
 
 a. first line requires the HTTP module that ships with Node.js and makes a pathway through the variable 'http'
 
@@ -79,3 +79,28 @@ Whenever a request is received, it uses the response.writeHead() function to sen
 
 
 # finding a place for our server module
+You may use your server module just like any internal module : require its file and assign it to a variable.
+
+Create a index.js file with the following content var server = require ("./server");
+
+server.start();
+
+* Make sure not to indent brackets for it will fuck your shit up.
+
+Once you got that set, use command : node index.js in the terminal command line > to start server.
+
+You can now add different parts of our application into different files and wire them together by making them modules.
+
+* Making different HTTP request points at different parts of our code is called "routing"
+
+
+# routing
+"GET" "POST"
+
+We need to look into the HTTP requests and extract the requested URL along with GET / POST params into our router.
+
+All the information you need is available through the "request" object which is passed as the first param to our callback function (onRequest)
+
+The url module provides methods which allow us to obtain the different parts of a URL (requested paths, query strings)
+
+* querystring can be used to parse the query string for requested params.

@@ -69,3 +69,13 @@ It's important to note that asynchronous models has its limitations. Node.js is 
 
 
 # how server handles requests
+If you refer to server.js > the body of our callback function onRequest()
+
+When the callback is requested and our onRequest() gets triggered, two parameters are passed into it : (request and response) > (req, res) whih are the objects in the method to handle details of the request made to HTTP.
+
+Whenever a request is received, it uses the response.writeHead() function to send an HTTP status 200 (successful) and the Content-Type which is ('text') to the header of site. The response.write() function is set to console.log > Hello World.
+
+* MAKE SURE TO response.end() TO END THE RESPONSE
+
+
+# finding a place for our server module

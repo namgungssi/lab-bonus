@@ -1,9 +1,8 @@
 'use strict';
 
 
-var querystring = require("querystring"),
-             fs = require ("fs");
-             formidable = require("formidable");
+var querystring = require("querystring"), fs = require ("fs");
+var formidable = require("formidable");
 
 
 function start(response) {
@@ -27,8 +26,7 @@ function start(response) {
   response.writeHead(200, {"Content-Type" : "text / html"});
   response.write(body);
   response.end();
-}
-}
+};
 
 
 function upload(response, request) {
@@ -62,7 +60,7 @@ function show(response) {
 
 exports.start = start;
 exports.upload = upload;
-exports.show = show;
+
 //don't forget to update all it's routed to.
 
 

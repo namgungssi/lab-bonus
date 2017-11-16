@@ -27,7 +27,7 @@ function start(response) {
   response.writeHead(200, {"Content-Type" : "text / html"});
   response.write(body);
   response.end();
-});
+}
 }
 
 
@@ -45,7 +45,7 @@ function upload(response, request) {
         fs.reanme(files.upload.path, "/tmp/test.png");
       }
     });
-    
+
   response.writeHead(200, {"Content-Type" : "text / plain"});
   response.write("You've sent the text : " +
   querystring.parse(postData).text);
@@ -57,6 +57,7 @@ function show(response) {
   console.log("request handler 'show' was called");
   response.writeHead(200, {"Content-Type" : "image/png"});
   fs.createReadStream("/tmp/test.png").pipe(response);
+}
 }
 
 exports.start = start;

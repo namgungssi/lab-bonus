@@ -104,3 +104,44 @@ All the information you need is available through the "request" object which is 
 The url module provides methods which allow us to obtain the different parts of a URL (requested paths, query strings)
 
 * querystring can be used to parse the query string for requested params.
+
+* think of HTTP server and ROUTER requests as best friends. They need each other in order to function.
+
+* If JavaScript objects are collections of name / value pairs, the values can be strings, numbers, etc. EVEN FUNCTIONS.
+
+* It's simple to map different URLs to the request handler :
+- ADD A KEY / VALUE PAIR "/" & requestHandlers.start,
+
+- After defining our object, we pass it into the server as an additional param.
+
+* "Handling request" means "answering requests"
+
+* exec() executes a shell command from within Node.js. In example requestHandlers.js > we are going to use it to get a list of all files in the current directory ("ls -lah"), allowing us to display the full list in the browswer.
+
+"What the code does is straightforward: create a new variable content (with an initial value of “empty”), execute “ls -lah”, fill the variable with the result, and return it."
+
+* exec > execute
+
+
+# handling POST requests
+We need to tell Node.js which functions to call back to when these events occur. Add LISTENERS to the REQUEST object that's passing onRequest cb.
+
+
+request.addListener("data", function(chunk) {
+// called when a new chunk of data was received
+});
+
+request.addListener("end", function() {
+// called when all chunks of data have been received
+});
+
+
+To implement this logic, it's the HTTP servers job to give the app all the data from a requests it needs to do its job so handle the POST data right in the server and pass the final data on the router and request handlers.
+
+
+# Overview / Reference
+
+As of now, The Node Craftsman Book contains the following chapters:
+• Working with NPM and Packages • Object-Oriented JavaScript
+• Test-Driven Node.js Development • Using and creating Event Emitters • Node.js and MySQL
+• Node.js and MongoDB
